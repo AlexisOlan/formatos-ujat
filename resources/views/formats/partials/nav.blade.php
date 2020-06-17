@@ -1,11 +1,11 @@
 <section id="nav-bar" class="bg-white">
-  <nav class="navbar navbar-expand-lg navbar-dark shadow border-0" style="height: 15vh">
+  <nav class="navbar navbar-expand-lg navbar-light shadow border-0" style="height: 15vh">
     <a class="navbar-brand ml-5" href="{{route('home')}}"><img src="http://www.ujat.mx/Content/images/logo-ujat.png" alt="logo-ujat" height="75px"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <img src="{{asset('img/icons/hamburger.svg')}}" height="20px" alt="">
     </button>
-    <div class="collapse navbar-collapse m-0 p-3 text-center border-0 bg-white" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
+    <div class="collapse navbar-collapse bg-white" id="navbarNav">
+      <ul class="navbar-nav ml-auto text-center p-0">
         @if (Auth::check())
           <li class="nav-item pr-5">
             <a class="nav-link text-dark font-weight-bold" href="{{route('home')}}">Inicio</a>
@@ -31,9 +31,6 @@
         @else
           <li class="nav-item mr-3 p-2">
             <a class="nav-link text-dark font-weight-bold" href="{{route('home')}}">Inicio</a>
-          </li>
-          <li class="nav-item mr-3 p-2">
-              <a class="nav-link text-dark font-weight-bold" href="{{route('register')}}">Registro</a>
           </li>
           <li class="nav-item mr-3 p-2">
               <a class="nav-link text-dark font-weight-bold" href="{{route('login')}}">Iniciar sesión</a>

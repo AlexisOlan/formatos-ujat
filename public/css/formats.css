@@ -15,117 +15,43 @@ body {
     margin: 3cm 2cm 2cm;
 }
 
-header {
+.header img{
     position: fixed;
-    top: .6cm;
+    top: .5cm;
     left: 2cm;
-    right: 0cm;
-    width: 15cm;
-    height: 1.5cm;
-    background-color: #93978A;
-    color: white;
-    font-style: italic;
-    text-align: left;
-    padding-left: .5cm;
-    vertical-align: -.5cm;
-    font-size: .7cm;
-    line-height: 20px;
-    border: 3.5px solid #f1f1f1;
+    width: 18cm;
 }
 
-.header{
+.ujat{
     position: fixed;
-    top: .6cm;
-    left: 17cm;
-    right: 0cm;
-    width: 3cm;
-    height: 1.5cm;
-    background-color: #CEDEAD;
-    font-style: normal;
-    font-weight: 500;
-    font-size: .7cm;
-    vertical-align: -.5cm;
+    top: 11cm;
+    left: 6.2cm;
+}
+
+.footer{
+    position: fixed;
+    top: 26cm;
+    left: 2.3cm;
+}
+
+.oficio{
+    position: fixed;
+    right: 2.6cm;
+    top: 6cm;
     text-align: right;
-    padding-right: .2cm;
-    border: 3.5px solid #f1f1f1;
 }
-
-.fecha{
-    width: 10cm;
+.remitente{
     position: fixed;
-    top: 3.5cm;
-    left: 11.8cm;
+    top: 7.5cm;
+    left: 3.5cm;
+    text-align: left;
 }
-
-.asunto{
-    font-weight: 700;
-    width: 15cm;
-    position: fixed;
-    top: 5cm;
-    left: 4.7cm;
-}
-
-.destinatario{
-    position: fixed;
-    top: 7cm;
-    left: 2.3cm;
-}
-
 .contenido{
+    position: fixed;
+    top: 10cm;
+    left: 3.5cm;
     text-align: justify;
-    position: fixed;
-    top: 9.5cm;
-    left: 2.3cm;
-    width: 17.2cm;
-}
-
-.att{
-    position: fixed;
-    top: 17cm;
-    left: 9cm;
-    letter-spacing: .1cm;
-}
-
-.sub-l{
-    position: fixed;
-    top: 18.5cm;
-    left: 2.3cm;
-}
-
-.sub-r{
-    position: fixed;
-    top: 18.5cm;
-    left: 12cm;
-}
-
-.nombre-l{
-    position: fixed;
-    top: 19.5cm;
-    left: 14.4cm;
-    font-weight: bold;
-}
-
-.nombre-r{
-    position: fixed;
-    top: 19.5cm;
-    left: 4.5cm;
-    font-weight: bold;
-}
-
-.table-l{
-    position: fixed;
-    top: 20.6cm;
-    left: 12cm;
-    width: 20cm;
-    font-weight: bold;
-}
-
-.table-r{
-    position: fixed;
-    top: 20.6cm;
-    left: 3.2cm;
-    width: 20cm;
-    font-weight: bold;
+    width: 15.5cm;
 }
 
 footer {

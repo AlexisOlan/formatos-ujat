@@ -8,86 +8,45 @@
     <link rel="stylesheet" href="{{asset('css/formats.css')}}">
 </head>
 <body>
-    <header>
-        F4: Solicitud de Director de Tesis
-        <div class="header">
-            {{$year}}
-        </div>
-    </header>
-    <main>
-        <div class="fecha">
-            Cunduacán, Tabasco., a {{$day}} de {{$month}} del {{$year}}.
-        </div>
-        <div class="asunto" style="left:9cm!important;">
-            Asunto: Solicitud de Directores para Trabajo Recepcional.
-        </div>
-        <div class="destinatario">
-            <span class="nombre" style="font-weight:bold;">Lic. Oscar González González </span><br>
-            Director de la DACyTI <br>
-            Presente
-        </div>
-        <div class="contenido">
-            En virtud de que con fecha {{$day}} de {{$month}} de {{$year}},  la Comisión Revisora dictaminó como viable<br><br>
+    <div class="header">
+        <img src="{{asset('img/logo/header.png')}}" alt="">
+    </div>
+    <div class="ujat">
+        <img src="{{asset('img/logo/brandw.png')}}" height="500cm" alt="">
+    </div>
+    <div class="footer">
+        <img src="{{asset('img/logo/footer.png')}}" height="70cm" alt="">
+    </div>
+    <div class="oficio">
+        Oficio No. «Num1»/{{$year}}/DACyTI/D<br>
+        {{$day . " de " . $month . " " . $year}}
+    </div>
+    <div class="remitente">
+        <strong>{{$alumno[0]['teacher3']}}</strong><br>
+        Profesor Investigador<br>
+        Presente
+    </div>
+    <div class="contenido">
+        De acuerdo al artículo 72 del Reglamento de Titulación, de la Universidad Juárez Autónoma
+        de Tabasco, me permito designarlo Director del Trabajo Recepcional titulado <strong>“{{$alumno[0]['job-title']}}”</strong>, 
+        a realizarse por la C. <strong>{{$alumno[0]['name']}}</strong>, para obtener el título de la Licenciatura
+        en Informática Administrativa, bajo la modalidad de Tesis. No omito manifestarle que con fundamento en el
+        artículo 78 del reglamento antes mencionado, a partir de la fecha expedida tiene como plazo máximo un año para concluir
+        concluir la tesis de lo contrario, el estudiante deberá optar por otra modalidad de titulación.<br><br>
 
-            nuestro anteproyecto titulado “{{$alumno['trabajo']}}”, con folio: <br><br> {{$alumno['folio']}}, cuyo
-            
-            desarrollo fue supervisado por los profesores: {{$alumno['maestro1']}} y  <br><br>
+        Sin otro particular, agradezco de antemano su colaboración y apoyo, enviándole un cordial saludo. <br><br>
 
-            {{$alumno['maestro2']}}; por este medio nos permitimos proponerlos ante usted para que sean <br><br>
+        Atentamente <br><br><br><br><br>
 
-            designados como directores <br><br>
+        MTE. Oscar Alberto González González <br>
+        Director <br><br><br>
 
-            Sin otro particular, agradecemos la gentileza de su atención. <br><br><br><br><br>
+        <div style="height:.4cm"> C.c.p. Coordinador de Estudios Terminales</div>
+        <div style="height:.4cm; padding-left:1.1cm">Tesistas</div>
+        <div style="height:.4cm; padding-left:1.1cm">Archivo</div>
+        <div style="height:.4cm; padding-left:1.1cm">Consecutivo</div><br><br>
 
-
-            <span class="att" style="font-weight:bold;"> Atentamente </span>
-
-            <div class="sub-l">____________________________________</div>
-            <div class="nombre-l">Nombre y firma</div>
-            <div class="sub-r">____________________________________</div>
-            <div class="nombre-r">Nombre y firma</div>
-        </div>
-
-        <div class="tables">
-            <div class="table-r">
-                <table>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Licenciatura:</th>
-                        <td style="text-align: right; font-weight:light">{{$alumno['lic']}}</td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Matrícula:</th>
-                        <td style="text-align: right; font-weight:light">{{Auth::user()->matricula}}</td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Domicilio:</th>
-                        <td style="text-align: right; font-weight:light">{{$alumno['domicilio']}}</td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Localidad:</th>
-                        <td style="text-align: right; font-weight:light">{{$alumno['local']}}</td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Teléfono de casa:</th>
-                        <td style="text-align: right; font-weight:light">{{$alumno['telefono']}}</td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Celular:</th>
-                        <td style="text-align: right; font-weight:light">{{$alumno['celular']}}</td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Email:</th>
-                        <td style="text-align: right; font-weight:light">{{Auth::user()->email}}</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div style="font-size:13px; height:.4cm"> c.c.p. 	Lic. Carlos González Zacarias.- Coordinador de Estudios Terminales</div>
-        <div style="font-size:13px; height:.4cm; padding-left:.8cm"> Directores</div>
-        <div style="font-size:13px; height:.4cm; padding-left:.8cm"> Profesor de Asignatura</div>
-        <div style="font-size:13px; height:.4cm; padding-left:.8cm"> Estudiantes</div>
-    </footer>
+        <div style="font-size: 12px;">MTE. *OAGG/LC*CGZ</div>
+    </div>
 </body>
 </html>

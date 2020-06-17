@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Student;
 use App\User;
 use Carbon\Carbon;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -13,6 +14,21 @@ class FormatsController extends Controller
     public function __construct()
     {
         if(!session()->has('alumno')) session()->put('alumno', array());
+        if(!session()->has('query')) session()->put('query', array());
+    }
+
+
+    public function search(Request $request){
+        $search = $request->get('search');
+
+        if ($search == '') {
+            return back()->with('error_message', 'Debe ingresar una matrícula');
+        } else {
+            $matricula = Student::select('name', 'job-title', 'teacher3', 'carrer')->matricula($search)->get()->toArray();
+
+            session()->put('query', $matricula);
+            return view('formats.forms.f4.filled', compact('matricula'));
+        }
     }
 
     /*-------------------------------------- Formato F2 --------------------------------------*/
@@ -51,6 +67,7 @@ class FormatsController extends Controller
         setlocale(LC_TIME, "es_MX");
         $month = ucfirst(strftime("%B"));
 
+        session()->forget('alumno');
 
         $pdf = PDF::loadView('formats.forms.f2.f2', compact('year', 'day', 'month', 'alumno'))->setPaper('letter');
         return $pdf->download();
@@ -59,30 +76,29 @@ class FormatsController extends Controller
     public function store(Request $request){
 
         $this->validate($request, [
+            'alumno'    => 'required',
+            'matricula' => 'required|unique:students',
             'trabajo'   => 'required',
             'folio'     => 'required',
             'maestro1'  => 'required',
-            'lic'       => 'required',
-            'domicilio' => 'required',
-            'local'     => 'required',
-            'telefono'  => 'required|numeric|min:10',
-            'celular'   => 'required|numeric|min:10'
+            'masig'     => 'required',
+            'lic'       => 'required'
         ]);
 
         $data = [
-            'trabajo'   => $request->get('trabajo'),
+            'name'    => $request->get('alumno'),
+            'matricula' => $request->get('matricula'),
+            'job-title'   => $request->get('trabajo'),
             'folio'     => $request->get('folio'),
-            'maestro1'  => $request->get('maestro1'),
-            'maestro2'  => $request->get('maestro2'),
-            'masig'     => $request->get('masig'),
-            'lic'       => $request->get('lic'),
-            'domicilio' => $request->get('domicilio'),
-            'local'     => $request->get('local'),
-            'telefono'  => $request->get('telefono'),
-            'celular'   => $request->get('celular')
+            'teacher1'  => $request->get('maestro1'),
+            'teacher2'  => $request->get('maestro2'),
+            'teacher3'     => $request->get('masig'),
+            'carrer'       => $request->get('lic')
         ];
 
         session()->put('alumno', $data);
+
+        $student = Student::create($data);
 
         return redirect()->route('filledf2')->with('success_message', 'Datos almacenados correctamente, tu documento se encuentra listo');
     }
@@ -118,46 +134,15 @@ class FormatsController extends Controller
     }
 
     public function filledf4(){
-        $alumno = session()->get('alumno');
+        $alumno = session()->get('query');
         $date = Carbon::now();
         $year = $date->format('Y');
         $day = $date->format('d');
         setlocale(LC_TIME, "es_MX");
         $month = ucfirst(strftime("%B"));
 
-
         $pdf = PDF::loadView('formats.forms.f4.f4', compact('year', 'day', 'month', 'alumno'))->setPaper('letter');
         return $pdf->download();
-    }
-
-    public function storef4(Request $request){
-
-        $this->validate($request, [
-            'trabajo'   => 'required',
-            'folio'     => 'required',
-            'maestro1'  => 'required',
-            'lic'       => 'required',
-            'domicilio' => 'required',
-            'local'     => 'required',
-            'telefono'  => 'required|numeric|min:10',
-            'celular'   => 'required|numeric|min:10'
-        ]);
-
-        $data = [
-            'trabajo'   => $request->get('trabajo'),
-            'folio'     => $request->get('folio'),
-            'maestro1'  => $request->get('maestro1'),
-            'maestro2'  => $request->get('maestro2'),
-            'lic'       => $request->get('lic'),
-            'domicilio' => $request->get('domicilio'),
-            'local'     => $request->get('local'),
-            'telefono'  => $request->get('telefono'),
-            'celular'   => $request->get('celular')
-        ];
-
-        session()->put('alumno', $data);
-
-        return redirect()->route('filledf4')->with('success_message', 'Datos almacenados correctamente, tu documento se encuentra listo');
     }
 
     /*-------------------------------------- Formato F4 --------------------------------------*/
@@ -203,37 +188,6 @@ class FormatsController extends Controller
         return $pdf->download();
     }
 
-    public function storef7(Request $request){
-
-        $this->validate($request, [
-            'trabajo'   => 'required',
-            'folio'     => 'required',
-            'modalidad' => 'required',
-            'maestro1'  => 'required',
-            'lic'       => 'required',
-            'domicilio' => 'required',
-            'local'     => 'required',
-            'telefono'  => 'required|numeric|min:10',
-            'celular'   => 'required|numeric|min:10'
-        ]);
-
-        $data = [
-            'trabajo'   => $request->get('trabajo'),
-            'folio'     => $request->get('folio'),
-            'modalidad' => $request->get('modalidad'),
-            'maestro1'  => $request->get('maestro1'),
-            'maestro2'  => $request->get('maestro2'),
-            'lic'       => $request->get('lic'),
-            'domicilio' => $request->get('domicilio'),
-            'local'     => $request->get('local'),
-            'telefono'  => $request->get('telefono'),
-            'celular'   => $request->get('celular')
-        ];
-
-        session()->put('alumno', $data);
-
-        return redirect()->route('filledf7')->with('success_message', 'Datos almacenados correctamente, tu documento se encuentra listo');
-    }
     /*-------------------------------------- Formato F7 --------------------------------------*/
 
     public function dataf2(){

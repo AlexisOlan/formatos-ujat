@@ -8,111 +8,50 @@
     <link rel="stylesheet" href="{{asset('css/formats.css')}}">
 </head>
 <body>
-    <header>
-        F2: Solicitud de Comisión Revisora Anteproyecto
-        <div class="header">
-            {{$year}}
-        </div>
-    </header>
-    <main>
-        <div class="fecha">
-            Cunduacán, Tabasco., a {{$day}} de {{$month}} del {{$year}}.
-        </div>
-        <div class="asunto">
-            Asunto: Solicitud de Comisión Revisora de Anteproyecto de Trabajo Recepcional
-        </div>
-        <div class="destinatario">
-            <span class="nombre" style="font-weight:bold;">Lic. Oscar González González </span><br>
-            Director de la DACyTI <br>
-            Presente
-        </div>
-        <div class="contenido">
-            Por este medio nos dirigimos a usted con la finalidad de solicitarle tenga a bien nombrar la Comisión Revisora para que evalúe el Anteproyecto del Trabajo Recepcional titulado: “______________________________________________________________”, con número de folio: _______. <br><br>
+    <div class="header">
+        <img src="{{asset('img/logo/header.png')}}" alt="">
+    </div>
+    <div class="ujat">
+        <img src="{{asset('img/logo/brandw.png')}}" height="500cm" alt="">
+    </div>
+    <div class="footer">
+        <img src="{{asset('img/logo/footer.png')}}" height="70cm" alt="">
+    </div>
+    <div class="oficio">
+        Oficio No. «Num1»/19/DAIS/D<br>
+        {{$day . " de " . $month . " " . $year}}
+    </div>
+    <div class="remitente">
+        <strong>«Revisor1»</strong><br>
+        Profesor Investigador<br>
+        Presente
+    </div>
+    <div class="contenido">
+        De acuerdo al artículo 67 del Reglamento de Titulación, de la Universidad Juárez Autónoma
+        de Tabasco, me permito informarle que ha sido designado integrante de la Comisión Revisora del
+        Anteproyecto titulado <strong>“«Proyecto»”</strong>, 
+        a realizarse por la C. <strong>«Alumnos»</strong>, para obtener
+        el título de la Licenciatura
+        en Informática Administrativa, bajo la modalidad de Tesis. <br><br>
 
-            Para tal efecto nos permitimos anexar a la presente tres tantos impresos del anteproyecto con el visto bueno de los profesores que nos apoyaron en la asesoría: ______________________________<br>  y ________________________, así como del profesor de la asignatura: ___________________________________. <br><br>
+        Y con fundamento en el artículo 68 del Reglamento de Titulación de la Universidad Juárez Autónoma
+        de Tabasco, solicito a Usted de la manera más atenta, me haga llegar por escrito, las observaciones y
+        comentarios correspondientes a dicho Proyecto, en un término no mayor de 10 días calendario. <br><br>
 
-            Sin otro particular, agradecemos la gentileza de su atención. <br><br><br><br><br>
+        Sin otro particular, agradezco de antemano su colaboración y apoyo, enviándole un cordial saludo. <br><br>
 
+        Atentamente <br><br><br><br>
 
-            <span class="att" style="font-weight:bold;"> Atentamente </span>
+        MTE. Oscar Alberto González González <br>
+        Director <br><br>
 
-            <div class="sub-l">____________________________________</div>
-            <div class="nombre-l">Nombre y firma</div>
-            <div class="sub-r">____________________________________</div>
-            <div class="nombre-r">Nombre y firma</div>
-        </div>
+        <div style="height:.4cm"> C.c.p. Coordinador de Estudios Terminales</div>
+        <div style="height:.4cm; padding-left:.9cm">«Revisor2»-integrante de la comisión revisora.</div>
+        <div style="height:.4cm; padding-left:.9cm">«Revisor3»-integrante de la comisión revisora.</div>
+        <div style="height:.4cm; padding-left:.9cm">Archivo</div>
+        <div style="height:.4cm; padding-left:.9cm">Consecutivo</div><br><br>
 
-        <div class="tables">
-            <div class="table-l">
-                <table>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Licenciatura:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Matrícula:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Domicilio:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Localidad:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Teléfono de casa:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Celular:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Email:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="table-r">
-                <table>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Licenciatura:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Matrícula:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Domicilio:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Localidad:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Teléfono de casa:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Celular:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align: left; padding-right:1cm;">Email:</th>
-                        <td style="text-align: right; font-weight:light"></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div style="font-size:13px; height:.4cm"> c.c.p. 	Lic. Carlos González Zacarias.- Coordinador de Estudios Terminales</div>
-        <div style="font-size:13px; height:.4cm; padding-left:.8cm"> Titular de la asignatura</div>
-        <div style="font-size:13px; height:.4cm; padding-left:.8cm"> Estudiantes</div>
-    </footer>
+        <div style="font-size: 12px;">MTE. *OAGG/LC*CGZ</div>
+    </div>
 </body>
 </html>

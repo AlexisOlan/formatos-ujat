@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="{{asset('css/formats.css')}}">
 </head>
 <body>
-    <header>
+    <h1 style="position:fixed; left:5.5cm; top:5cm;">No se encontro el documento</h1>
+    {{-- <header>
         F7: Solicitud de Jurado
         <div class="header">
             {{$year}}
@@ -120,6 +121,6 @@
     <footer>
         <div style="font-size:13px; height:.4cm"> c.c.p. 	Lic. Carlos González Zacarias.- Coordinador de Estudios Terminales</div>
         <div style="font-size:13px; height:.4cm; padding-left:.8cm"> Estudiantes</div>
-    </footer>
+    </footer> --}}
 </body>
 </html>

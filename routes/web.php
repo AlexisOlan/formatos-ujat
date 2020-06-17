@@ -29,6 +29,7 @@ Route::get('form/filled/f2', 'FormatsController@dataf2')->name('filledf2');
 Route::post('form/store/f2', 'FormatsController@store')->name('form.store');
 Route::get('filled/download/f2', 'FormatsController@filledf2')->name('filled.f2')->middleware('auth');
 
+Route::get('search',  'FormatsController@search')->name('search');
 
 Route::get('view/f4', 'FormatsController@f4')->name('v.f4');
 Route::get('download/format/f4', 'FormatsController@downloadf4')->name('d.f4');
@@ -47,4 +48,4 @@ Route::get('filled/download/f7', 'FormatsController@filledf7')->name('filled.f7'
 
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home.index');
+Route::get('/homeindex', 'HomeController@index')->name('home.index');

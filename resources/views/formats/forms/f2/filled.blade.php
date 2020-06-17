@@ -15,38 +15,30 @@
                 <div class="card-body">
                     {{-- @foreach($alumno as $item) --}}
                         <div class="form-group ml-5"> 
-                            <span class="font-weight-bold">Trabajo recepcional:</span><br> {{ $alumno['trabajo' ] }}
+                            <span class="font-weight-bold">Alumno:</span><br> {{ $alumno['name' ] }}
+                        </div>
+                        <div class="form-group ml-5"> 
+                            <span class="font-weight-bold">Matrícula:</span><br> {{ $alumno['matricula' ] }}
+                        </div>
+                        <div class="form-group ml-5"> 
+                            <span class="font-weight-bold">Trabajo recepcional:</span><br> {{ $alumno['job-title' ] }}
                         </div>
                         <div class="form-group ml-5"> 
                             <span class="font-weight-bold">Folio:</span><br> {{ $alumno['folio' ] }}
                         </div>
                         <div class="form-group ml-5"> 
-                            <span class="font-weight-bold">Mestro N.1:</span><br> {{ $alumno['maestro1' ] }}
+                            <span class="font-weight-bold">Mestro N.1:</span><br> {{ $alumno['teacher1' ] }}
                         </div>
                         <div class="form-group ml-5"> 
-                            <span class="font-weight-bold">Maestro N.2:</span><br> {{ $alumno['maestro2' ] }}
+                            <span class="font-weight-bold">Maestro N.2:</span><br> {{ $alumno['teacher2' ] }}
                         </div>
                         <div class="form-group ml-5"> 
-                            <span class="font-weight-bold">Maestro de la asignatura:</span><br> {{ $alumno['masig' ] }}
+                            <span class="font-weight-bold">Maestro de la asignatura:</span><br> {{ $alumno['teacher3' ] }}
                         </div>
                         <div class="form-group ml-5"> 
-                            <span class="font-weight-bold">Carrera:</span><br> {{ $alumno['lic' ] }}
-                        </div>
-                        <div class="form-group ml-5"> 
-                            <span class="font-weight-bold">Domicilio:</span><br> {{ $alumno['domicilio' ] }}
-                        </div>
-                        <div class="form-group ml-5"> 
-                            <span class="font-weight-bold">Localidad:</span><br> {{ $alumno['local' ] }}
-                        </div>
-                        <div class="form-group ml-5"> 
-                            <span class="font-weight-bold">Teléfono de casa:</span><br> {{ $alumno['telefono' ] }}
-                        </div>
-                        <div class="form-group ml-5"> 
-                            <span class="font-weight-bold">Celular:</span><br> {{ $alumno['celular' ] }}
+                            <span class="font-weight-bold">Carrera:</span><br> {{ $alumno['carrer' ] }}
                         </div>
                     {{-- @endforeach --}}
-
-
                 </div>
             </div>
         </div>
